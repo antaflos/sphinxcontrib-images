@@ -20,7 +20,10 @@ import sphinx
 from sphinx.locale import _
 from sphinx.environment import NoUri
 from sphinx.util.osutil import copyfile
-from sphinx.util.compat import Directive
+try:
+    from sphinx.util.compat import Directive
+except ImportError:
+    from docutils.parsers.rst import Directive
 from sphinx.util.console import brown
 from sphinx.util.osutil import ensuredir
 from sphinx.util import status_iterator
